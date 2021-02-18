@@ -1,0 +1,328 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assignment3},
+  pdfauthor={Minnie Ringland},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Assignment3}
+\author{Minnie Ringland}
+\date{2/1/2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{part-1-exploring-the-data}{%
+\subsection{Part 1: Exploring the
+data}\label{part-1-exploring-the-data}}
+
+For different countries, we have a time series of temperature (deg C)
+and agricultural yield (kg/hectare).
+
+What is the relationship between temperature and (log) yield?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{panel }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"country\_year\_panel.csv"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# Overlapping plots}
+\FunctionTok{plot}\NormalTok{(panel}\SpecialCharTok{$}\NormalTok{temp, panel}\SpecialCharTok{$}\NormalTok{l\_yield)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(panel}\SpecialCharTok{$}\NormalTok{l\_yield}\SpecialCharTok{\textasciitilde{}}\NormalTok{panel}\SpecialCharTok{$}\NormalTok{temp), }\AttributeTok{lwd=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{lowess}\NormalTok{(panel}\SpecialCharTok{$}\NormalTok{temp, panel}\SpecialCharTok{$}\NormalTok{l\_yield, }\AttributeTok{f=}\NormalTok{.}\DecValTok{1}\NormalTok{, }\AttributeTok{iter=}\DecValTok{0}\NormalTok{), }\AttributeTok{lwd=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment3_files/figure-latex/unnamed-chunk-1-1.pdf}
+Black circles = observations\\
+Blue line = linear regression\\
+Red line = non-parametric local linear regression
+
+The spread of the data points and the variation in the red line, in
+addition to the low temperature cluster, show that there may be patterns
+in the data that a linear approximation will leave out.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{part-2-cross-sectional-vs.-within-models-all-countries}{%
+\subsection{Part 2: Cross-sectional vs.~within models: all
+countries}\label{part-2-cross-sectional-vs.-within-models-all-countries}}
+
+\hypertarget{average-temperature-climate}{%
+\subsubsection{Average temperature (\textasciitilde{}
+climate)}\label{average-temperature-climate}}
+
+We'll average all observations for a country across all years, and
+generate a single mean set of values for each country.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# "Collapse" into country means}
+\NormalTok{cross }\OtherTok{\textless{}{-}} \FunctionTok{summaryBy}\NormalTok{(l\_yield}\SpecialCharTok{+}\NormalTok{temp }\SpecialCharTok{\textasciitilde{}}\NormalTok{ cID, }\AttributeTok{FUN=}\FunctionTok{c}\NormalTok{(mean), }\AttributeTok{data=}\NormalTok{panel)}
+
+\CommentTok{\# Then plot again}
+\FunctionTok{plot}\NormalTok{(cross}\SpecialCharTok{$}\NormalTok{temp.mean, cross}\SpecialCharTok{$}\NormalTok{l\_yield.mean)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(cross}\SpecialCharTok{$}\NormalTok{l\_yield.mean}\SpecialCharTok{\textasciitilde{}}\NormalTok{cross}\SpecialCharTok{$}\NormalTok{temp.mean), }\AttributeTok{lwd=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{lowess}\NormalTok{(cross}\SpecialCharTok{$}\NormalTok{temp.mean, cross}\SpecialCharTok{$}\NormalTok{l\_yield.mean, }\AttributeTok{f=}\NormalTok{.}\DecValTok{1}\NormalTok{, }\AttributeTok{iter=}\DecValTok{0}\NormalTok{), }\AttributeTok{lwd=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment3_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+Now, the spread of data is reduced and the linear approximation seems
+more reasonable - the single low temperature observation appears to be
+an outlier. If we move forward with the assumption of a linear
+relationship, we can calculate the approximate effect on temperature on
+yield:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate coefficient on temperature using the linear model}
+\NormalTok{linear\_temp\_coeff }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(cross}\SpecialCharTok{$}\NormalTok{l\_yield.mean}\SpecialCharTok{\textasciitilde{}}\NormalTok{cross}\SpecialCharTok{$}\NormalTok{temp.mean)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Temperature coefficient using the linear model = \emph{-0.0549831}\\
+This means we'd expect a 5\% reduction (negative relationship) in yield
+from a 1 degree increase in temperature.
+
+\hypertarget{cross-sectional-estimate-with-the-within-or-fixed-effects-estimate}{%
+\subsubsection{Cross-sectional estimate with the ``within'' or fixed
+effects
+estimate}\label{cross-sectional-estimate-with-the-within-or-fixed-effects-estimate}}
+
+Now we will try a model that enables a different type comparison by
+grouping (by country) and then measuring within-group deviation from the
+country mean:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Running a fixed effect regression}
+\NormalTok{fixed\_effects\_coeff }\OtherTok{\textless{}{-}} \FunctionTok{plm}\NormalTok{(l\_yield }\SpecialCharTok{\textasciitilde{}}\NormalTok{ temp, }\AttributeTok{data=}\NormalTok{panel, }\AttributeTok{index=}\FunctionTok{c}\NormalTok{(}\StringTok{"cID"}\NormalTok{, }\StringTok{"year"}\NormalTok{), }\AttributeTok{model=}\StringTok{"within"}\NormalTok{)}\SpecialCharTok{$}\NormalTok{coefficients}
+\end{Highlighting}
+\end{Shaded}
+
+Temperature coefficient using the fixed effect regression =
+\emph{-0.0546861}\\
+The expected impact is similar to our previous model - about 5\%
+reduction in yield per degree temperature increase.
+
+These two models have different advantages - the cross-sectional model
+should capture adaptation to temperature change because we average
+across time, and the fixed effects model should account for variation in
+temperature between countries. Since these models agree, we can surmise
+that most countries have been able to adapt their agricultural
+techniques to make up for any temperature variations they experienced,
+and that the limit of the climate effect may be \textasciitilde5\% yield
+loss.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{part-3-cross-sectional-vs.-within-models-continents}{%
+\subsection{Part 3: Cross-sectional vs.~within models:
+continents}\label{part-3-cross-sectional-vs.-within-models-continents}}
+
+We have reason to believe that climate and weather effects are
+heterogeneous - they may be different for different parts of the world.
+So we'll redo our regressions for each continent to try to isolate
+geographic patterns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{continents }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"AF"}\NormalTok{,}\StringTok{"AS"}\NormalTok{,}\StringTok{"EU"}\NormalTok{, }\StringTok{"OC"}\NormalTok{,}\StringTok{"SA"}\NormalTok{,}\StringTok{"NM"}\NormalTok{)}
+
+\NormalTok{part3 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\StringTok{"CrossSectional"} \OtherTok{=} \DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\StringTok{"FixedEffects"} \OtherTok{=} \DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{row.names =}\NormalTok{ continents)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ continents) \{}
+\NormalTok{  continent\_panel }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(panel, panel}\SpecialCharTok{$}\NormalTok{continent}\SpecialCharTok{==}\NormalTok{i, }\AttributeTok{select=}\FunctionTok{c}\NormalTok{(cID, year, l\_yield, temp, continent))}
+\NormalTok{  continent\_cross }\OtherTok{\textless{}{-}} \FunctionTok{summaryBy}\NormalTok{(l\_yield}\SpecialCharTok{+}\NormalTok{temp }\SpecialCharTok{\textasciitilde{}}\NormalTok{ cID, }\AttributeTok{FUN=}\FunctionTok{c}\NormalTok{(mean), }\AttributeTok{data=}\NormalTok{continent\_panel)}
+\NormalTok{  part3[i,}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(continent\_cross}\SpecialCharTok{$}\NormalTok{l\_yield.mean}\SpecialCharTok{\textasciitilde{}}\NormalTok{continent\_cross}\SpecialCharTok{$}\NormalTok{temp.mean)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{  part3[i,}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}} \FunctionTok{plm}\NormalTok{(l\_yield }\SpecialCharTok{\textasciitilde{}}\NormalTok{ temp, }\AttributeTok{data=}\NormalTok{continent\_panel, }\AttributeTok{index=}\FunctionTok{c}\NormalTok{(}\StringTok{"cID"}\NormalTok{, }\StringTok{"year"}\NormalTok{), }\AttributeTok{model=}\StringTok{"within"}\NormalTok{)}\SpecialCharTok{$}\NormalTok{coefficients}
+\NormalTok{\}}
+
+\FunctionTok{kable}\NormalTok{(part3, }\AttributeTok{caption =} \StringTok{"Coefficient Comparison Across Continents"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrr@{}}
+\caption{Coefficient Comparison Across Continents}\tabularnewline
+\toprule
+& CrossSectional & FixedEffects\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& CrossSectional & FixedEffects\tabularnewline
+\midrule
+\endhead
+AF & -0.0261016 & -0.1181200\tabularnewline
+AS & -0.0090463 & -0.0451354\tabularnewline
+EU & -0.0610025 & -0.0168930\tabularnewline
+OC & -0.0844075 & -0.1989222\tabularnewline
+SA & -0.0091302 & -0.0816297\tabularnewline
+NM & -0.0297575 & 0.0067167\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{part3)}\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{row.names}\NormalTok{(part3), }\AttributeTok{y=}\NormalTok{CrossSectional), }\AttributeTok{fill=}\StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{row.names}\NormalTok{(part3), }\AttributeTok{y=}\NormalTok{FixedEffects), }\AttributeTok{fill=}\StringTok{"green"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Country"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Temp Coefficient"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment3_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+Now we see that the coefficients produced by the two models do not agree
+when we subset by continent.
+
+Are the coefficients between cross sectional and fixed effects panel
+regressions different for each continent. What does this tell us about
+adaptation in each continent. Does it make sense? Where does it not make
+sense and what are possible explanations?
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{bonus}{%
+\subsection{Bonus}\label{bonus}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Manual fixed effects regression}
+\CommentTok{\# First, de{-}mean:}
+
+\CommentTok{\#manual \textless{}{-} panel \%\textgreater{}\% }
+\CommentTok{\#  mutate(l\_yield.mean = 0)}
+
+
+\CommentTok{\#  mutate(l\_yield.demean = l\_yield.mean {-} l\_yield\_mean) \%\textgreater{}\% }
+\CommentTok{\#  mutate(temp.demean = temp.mean {-} temp\_mean)}
+
+\CommentTok{\#manual\_coeff \textless{}{-} lm(manual$l\_yield.demean\textasciitilde{}manual$temp.demean)$coefficients[1]}
+\CommentTok{\#Temperature coefficient using manually coded fixed effects regression = *\textasciigrave{}r manual\_coeff\textasciigrave{}*  }
+\end{Highlighting}
+\end{Shaded}
+
+Temperature coefficient using R's fixed effect regression =
+\emph{-0.0546861}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Then plot again}
+\CommentTok{\#plot(manual$temp.demean, manual$l\_yield.demean)}
+\CommentTok{\#abline(lm(manual$l\_yield.demean\textasciitilde{}manual$temp.demean), lwd=3, col="blue")}
+\CommentTok{\#lines(lowess(manual$temp.demean, manual$l\_yield.demean, f=.1, iter=0), lwd=3, col="red")}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
